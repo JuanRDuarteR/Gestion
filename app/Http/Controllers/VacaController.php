@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use sicas\Vaca;
+use App\vaca;
 
 class VacaController extends Controller
 {
@@ -35,7 +35,20 @@ class VacaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validatedData = $request->validate([
+            'nombre' => 'required|max:255',
+            'raza' => 'required|max:255',
+            'origen' => 'required|max:255',
+            'fecha_inc' => 'required|date',
+            'fecha_nac' => 'required|date',
+            'edad' => 'required|numeric',
+            'estatus' => 'required|max:255',
+        ]);
+        $vaca = Vaca::create($validatedData);
+   
+        return redirect('/vacas')->with('success', 'Vaca is successfully saved');
+        
     }
 
     /**

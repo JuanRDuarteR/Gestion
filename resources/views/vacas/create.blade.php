@@ -21,20 +21,38 @@
       </div><br />
     @endif
       <form method="post" action="{{ route('vacas.store') }}">
-          <div class="form-group">
-              @csrf
-              <label for="name">Nombre:</label>
+      @csrf
+      <div class="form-row">
+          <div class="form-group col-md-4">
+              <label for="name">Nombre Vaca:</label>
               <input type="text" class="form-control" name="nombre"/>
           </div>
-          <div class="form-group">
-              <label for="price">Book ISBN Number :</label>
-              <input type="text" class="form-control" name="isbn_no"/>
+          <div class="form-group col-md-4">
+              <label for="price">Raza :</label>
+              <input type="text" class="form-control" name="raza"/>
+          </div>
+          <div class="form-group col-md-4">
+              <label for="quantity">Origen:</label>
+              <input type="text" class="form-control" name="origen"/>
+          </div>
+          <div class="form-group col-md-4">
+              <label for="quantity">Fecha de Incorporacion:</label>
+              <input type="date" class="form-control" name="fecha_inc"/>
+          </div>
+          <div class="form-group col-md-4">
+              <label for="quantity">Fecha Nacimiento:</label>
+              <input type="date" class="form-control" name="fecha_nac"/>
+          </div>
+          <div class="form-group col-md-4">
+              <label for="quantity">Edad:</label>
+              <input type="text" class="form-control" name="edad"/>
           </div>
           <div class="form-group">
-              <label for="quantity">Book Price :</label>
-              <input type="text" class="form-control" name="book_price"/>
+              <label for="quantity">Estatus:</label>
+              <input type="text" class="form-control" name="estatus"/>
           </div>
-          <button type="submit" class="btn btn-primary">Create Book</button>
+          </div>
+          <button type="submit" class="btn btn-primary">Crear Vaca</button>
       </form>
   </div>
 </div>
